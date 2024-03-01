@@ -13,14 +13,16 @@ function checkWord(userword, word) {
         }
     }
 }
+var num = 0
 window.onload = function findNumber(){
     fetch('/word')
         .then(response => response.text())
         .then(data => {
             num = data.slice(0, -1)
-            console.log(num)
+            console.log(num.length)
         })
 }
+
 const form = document.getElementById('motForm');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -36,16 +38,15 @@ form.addEventListener('submit', (event) => {
     //    });
 });
 
-var num = 0
+
 function addFields(){
     // Generate a dynamic number of inputs
-    var number = document.getElementById("member").value;
+    var number = num.length;
     // Get the element where the inputs will be added to
     var container = document.getElementById("container");
     // Remove every children it had before
-    while (container.hasChildNodes()) {
-        container.removeChild(container.lastChild);
-    }
+    //while (container.hasChildNodes()) {
+    //    container.removeChild(container.lastChild);}
     for (i=0;i<number;i++){
         var input = document.createElement("input");
         input.type = "text";
