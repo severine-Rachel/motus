@@ -124,6 +124,9 @@ function addFields(){
             input.id = "case" + i + j
             input.name = "case" + i +j;
             input.maxLength = "1"
+            if (input.id == "case00"){
+                input.placeholder = tabword[0]
+            }
             container.appendChild(input);
             // Append a line break 
         }
