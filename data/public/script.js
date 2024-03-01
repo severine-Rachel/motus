@@ -25,11 +25,13 @@ window.onload = function findNumber(){
             num = data.slice(0, -1).length
             word = data.slice(0, -1)
             tabword = word.split("")
+            tabchange =  word.split("")
             console.log(num)
             console.log(word)
             console.log(tabword)
         })
 }
+
 var numTry = 0
 var success = 0
 const form = document.getElementById('motForm');
@@ -38,28 +40,35 @@ form.addEventListener('submit', (event) => {
     if (numTry != 5){
         incrNum = numTry+1
     }
+    else{addElement("L")}
     var letterUser = ""
     for (i = 0; i<num; i++){
-        console.log("numTry = " + numTry)
         letterUser = document.getElementById('case'+i+numTry).value;
         var trueLetter = tabword.at(i)
-        console.log(letterUser + 'case'+i+numTry)
+        console.log(letterUser + ' case'+i+numTry + "réel letter : " + trueLetter)
+        console.log("tabword   =  " + tabword)
         if (trueLetter == letterUser){
             document.getElementById('case'+i+numTry).style.backgroundColor = '#93ff8a';
             success +=1
             var input = document.getElementById("case" + i + incrNum);
             input.placeholder = trueLetter
         }
-        /*else if(tabword[found]){
-            if (typeof(myVariable) != "undefined"){
-
+        else{
+            console.log("pas la même valeur")
+            for (k = 0; k<tabchange.length; k++){
+                console.log("letter k = " + tabchange[k])
+                if (letterUser == tabchange[k]){
+                    tabchange.splice(k, 1)
+                    console.log("tabchange   =  " + tabchange)
+                    document.getElementById('case'+i+numTry).style.backgroundColor = '#ffd48a';
+                    break;
+                }
             }
-        }*/
+        }
         
     }
     if (success == num){
-        console.log("success")
-        addElement()
+        addElement("V")
     }
     else{
         success = 0
@@ -80,11 +89,17 @@ form.addEventListener('submit', (event) => {
     //        document.getElementById('result').textContent = "erreur";
     //    });
 });
-function addElement() {
+function addElement(a) {
     // crée un nouvel élément div
     var newDiv = document.createElement("div");
     // et lui donne un peu de contenu
-    var newContent = document.createTextNode("Bravo vous avez trouvé le mot !");
+    if (a == "V"){
+        var newContent = document.createTextNode("Bravo t'as trouvé le mot ! Tu veux un cookie ?");
+    }
+    else{
+        var newContent = document.createTextNode("Perdu gros looser !");
+    }
+    
     // ajoute le nœud texte au nouveau div créé
     newDiv.appendChild(newContent);
   
