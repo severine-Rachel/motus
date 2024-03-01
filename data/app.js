@@ -15,42 +15,22 @@ try {
 function generateRandomNumber(seed) {
   const seedrandom = require('seedrandom');
   var date = new Date().toISOString().slice(0, 10); 
-  const tabDate = date.split("-")
-  var dateAdd = parseInt(tabDate[0]) + parseInt(tabDate[1]) + parseInt(tabDate[2])
+  const tabDate = date.split("-");
+  var dateAdd = parseInt(tabDate[0]) + parseInt(tabDate[1]) + parseInt(tabDate[2]);
   var combinedSeed = dateAdd + seed;
   const randomNumber = parseInt(seedrandom(combinedSeed)()*2700);
   return randomNumber;
 }
 
-const nombreElements = wordList.lenght
-
+const nombreElements = wordList.lenght;
 const randomNum = generateRandomNumber(50);
 const word = wordList[randomNum]
-
-
-//app.get('/word', (req, res) => {
-//  const word = wordList[randomNum]
-//  res.send(word);
-//});
-
-//const userWord = require('./public/index').userWord
 
 app.get('/word', (req, res) => {
   const word = wordList[randomNum]
   res.send(word);
-  //const userWord = req.body.mot;
-  //res.send(userWord);
-  // Check the word
-  //const result = checkWord(userWord);
-
-  // Send back the result as the response
-  
 });
-
 
 const port = 3000;
 app.listen(port, () => {
-//  console.log(`Server is listening on port ${port}`);
 });
-
-
