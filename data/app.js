@@ -38,13 +38,6 @@ const word = wordList[randomNum]
 app.get('/word', (req, res) => {
   const word = wordList[randomNum]
   res.send(word);
-  //const userWord = req.body.mot;
-  //res.send(userWord);
-  // Check the word
-  //const result = checkWord(userWord);
-
-  // Send back the result as the response
-  
 });
 
 

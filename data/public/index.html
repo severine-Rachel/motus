@@ -9,15 +9,77 @@
 <body>
     <h1>MOTUS</h1>
     <form action="/word" method="get" id="motForm">
-        <label>TON GUESS:</label><br>
-        <a href="#" id="generate" onclick="addFields()">Générer mot du jour</a>
+        <a href="#" id="generate" onclick="addFields(); this.style.display = 'none';">Générer mot du jour</a>
         <div id="container"></div>  
         <br>
-        <button type="submit">Check</button>
+        
     </form> 
     <div id="yourword"></div>
     <!--<input type="text" id="charger" name="charger" value="">Number of members: (max. 10)<br />-->
-    
+    <div id="bravo"></div>
 </body>
 </html>
 <script src="script.js"></script>
+<style>
+    /* centrer le formulaire au milieu de la page */
+    /*
+    centrer le titre h1
+    cacher le bouton submit tant que le container est vide
+    */
+    button {
+        margin: 2%;
+        padding: 2%;
+        background-color: #4f0e1a;
+        color: white;
+        border-radius: 0%;
+        font-size: 80%;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    /*
+    a with color white and no underline
+    */
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    h1 {
+        text-align: center;
+    }
+    form {
+        text-align: center;
+    }
+    #container {
+        margin: 0 auto;
+        width: 50%;
+    }
+    /*
+    font police inside input to Arial
+    font size inside input to 1.5em
+    font always capitalized inside input
+    */
+
+    input {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 0.8em;
+        margin: 10px 5px;
+        padding: 5px;
+        border: 1px solid white;
+    }
+    /*
+    add background color to the entire page to #4f0e1a
+    font color to white
+    font police to Arial
+    font size to 1.5em
+    input  border to white
+    */
+    body {
+        background-color: #4f0e1a;
+        color: white;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 1.5em;
+    }
+    
+    
+</style>
