@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Static HTML Page</title>
+    <title>Motus</title>
 </head>
 <body>
-    <h1>MOTUS</h1>
+    <h1>Motus</h1>
     <form action="/word" method="get" id="motForm">
         <a href="#" id="generate" onclick="addFields(); this.style.display = 'none';">Générer mot du jour</a>
         <div id="container"></div>  
@@ -21,11 +21,6 @@
 </html>
 <script src="script.js"></script>
 <style>
-    /* centrer le formulaire au milieu de la page */
-    /*
-    centrer le titre h1
-    cacher le bouton submit tant que le container est vide
-    */
     button {
         margin: 2%;
         padding: 2%;
@@ -35,9 +30,6 @@
         font-size: 80%;
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     }
-    /*
-    a with color white and no underline
-    */
     a {
         color: white;
         text-decoration: none;
@@ -52,11 +44,7 @@
         margin: 0 auto;
         width: 50%;
     }
-    /*
-    font police inside input to Arial
-    font size inside input to 1.5em
-    font always capitalized inside input
-    */
+
 
     input {
         text-align: center;
@@ -67,13 +55,6 @@
         padding: 5px;
         border: 1px solid white;
     }
-    /*
-    add background color to the entire page to #4f0e1a
-    font color to white
-    font police to Arial
-    font size to 1.5em
-    input  border to white
-    */
     body {
         background-color: #4f0e1a;
         color: white;
