@@ -1,9 +1,12 @@
 const express = require('express');
 const fs = require('fs');
-
+const cors = require('cors');
 const app = express();
 
 app.use(express.static('public'));
+app.use(cors({
+  origin: 'https://localhost:4000'
+}));
 
 let wordList;
 try {
@@ -22,31 +25,12 @@ function generateRandomNumber(seed) {
   return randomNumber;
 }
 
-const nombreElements = wordList.lenght;
 const randomNum = generateRandomNumber(50);
-const word = wordList[randomNum]
 
 app.get('/word', (req, res) => {
   const word = wordList[randomNum]
   res.send(word);
 });
-
-var score = 0
-
-app.get('/setscore', (req, res) => {
-  res.send(score);
-});
-
-// Get the score from post method
-
-app.get('/getscore', (req, res) => {
-  score = req.body.score;
-  res.send('score');
-});
-
-
-
-
 
 
 const port = 3000;
