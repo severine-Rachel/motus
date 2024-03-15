@@ -30,6 +30,8 @@ Here is what the windows look like if the server is load on port 4000 :
 
 ![](README-Image/weight1port4000.png)
 
+![](README-Image/mermaidhaproxy.png)
+
 ## Score
 
 IN this section, the game is on data (port 3002) and the score section is on score (4000)
