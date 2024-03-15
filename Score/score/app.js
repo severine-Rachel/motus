@@ -8,7 +8,6 @@ var bodyParser = require('body-parser')
 app.use(cors({
   origin: 'http://localhost:3002',
 }));
-// si l'on va sur /, on renvoie le fichier score.html
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
