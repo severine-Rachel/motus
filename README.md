@@ -16,10 +16,8 @@ The project currently contains a functional Motus game, with a scoring system in
 ### This section is just to understand how to use haproxy
 
 - Create two servers on port 3000 and 4000 by running nodejs app in the folder ```port```.
-- 
 - Copy and paste the haproxy.cfg into ```etc/haproxy``` and then run ```sudo systemctl restart haproxy``` in the CLI, now the API can also be opened on port 3001.
 - We set weight of 3 on port 3000 and weight 1 on port 4000.
-- 
 - Then if you just run the port 3000, the port 3001 has a 75% chance to serve the motus app and 25% chance to not find the server.
 
 Here is what the windows look like if the server is load on port 3000 :
@@ -34,10 +32,10 @@ Here is what the windows look like if the server is load on port 4000 :
 
 ## Score
 
-IN this section, the game is on data (port 3002) and the score section is on score (4000)
+In this section, the game is on data (port 3002) and the score section is on score (4000).
 
 ![](README-Image/mermaidscore.png)
 
 ## Authentification
 
-In this section 
+In this section, we have the authentication page. It allows the user to login with a username and a password, or to register if not yet done. The user can also disconnect from this page in order to login with another account. The username and password, which are hashed for security purposes, are contained in users.json.
