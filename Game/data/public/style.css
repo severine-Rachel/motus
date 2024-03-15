@@ -7,16 +7,20 @@ button {
     font-size: 80%;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 a {
     color: white;
     text-decoration: none;
 }
+
 h1 {
     text-align: center;
 }
+
 form {
     text-align: center;
 }
+
 #container {
     margin: 0 auto;
     width: 50%;
@@ -32,6 +36,7 @@ input {
     padding: 5px;
     border: 1px solid white;
 }
+
 body {
     background-color: #4f0e1a;
     color: white;

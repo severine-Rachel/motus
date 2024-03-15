@@ -27,12 +27,6 @@ const nombreElements = wordList.lenght
 const randomNum = generateRandomNumber(50);
 const word = wordList[randomNum]
 
-//app.get('/word', (req, res) => {
-//  const word = wordList[randomNum]
-//  res.send(word);
-//});
-//const userWord = require('./public/index').userWord
-
 app.get('/word', (req, res) => {
   const word = wordList[randomNum]
   res.send(word);
@@ -47,6 +41,3 @@ const port2 = 3000;
 app.listen(port1, () => {
   console.log(`Server is listening on ${os.hostname()} on port ${port1}`);
 });
-/*app2.listen(port2, () => {
-  console.log(`Server is listening on port ${port2}`);
-});*/

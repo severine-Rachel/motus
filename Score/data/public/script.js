@@ -1,4 +1,3 @@
-// Find from API /word the word to find
 window.onload = function findNumber(){
     fetch('/word')
     .then(response => response.text())
@@ -10,35 +9,26 @@ window.onload = function findNumber(){
     })
 }
 
-// Listen to the user input
 var numTry = 0
 var success = 0
 const form = document.getElementById('motForm');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    // While number of try is less than 5 we continue
     if (numTry != 5){
         incrNum = numTry + 1}
-    // Else call the function addElement to add a div with the result of the game
     else{addElement("L")}
-    // For each letter of the word we compare the user input with the letter of tabword
     var letterUser = ""
     for (i = 0; i<num; i++){
         letterUser = document.getElementById('case'+i+numTry).value;
         var trueLetter = tabword.at(i)
-        //console.log(letterUser + ' case'+i+numTry + "réel letter : " + trueLetter)
-        //console.log("tabword   =  " + tabword)
-        // if the letter is the same we change the color of the input and we add the letter in the placeholder
         if (trueLetter == letterUser){
             document.getElementById('case' + i + numTry).style.backgroundColor = '#93ff8a';
             success += 1;
             var input = document.getElementById("case" + i + incrNum);
             input.placeholder = trueLetter;
         }
-        // if the letter is not the same, we find if the letter still exist in tab change
         else{
-            //console.log("pas la même valeur")
             for (k = 0; k<tabchange.length; k++){
                 if (letterUser == tabchange[k]){
                     tabchange.splice(k, 1);
@@ -47,12 +37,10 @@ form.addEventListener('submit', (event) => {
                 }
             }
         }
-    // if every letter was correct then the user guessed the word
     }
     if (success == num){
         addElement("V");
     }
-    //else restart for another line
     else{
         success = 0;
     }
@@ -60,7 +48,6 @@ form.addEventListener('submit', (event) => {
     numTry += 1
     console.log("fin de form" + numTry)
 });
-// at the end of the game, add a div with the result
 function addElement(a) {
     var newDiv = document.createElement("div");
     if (a == "V"){
@@ -75,7 +62,6 @@ function addElement(a) {
     document.body.insertBefore(newDiv, currentDiv);
   }
 
-// when user start the game, add the input fields
 var word = ""
 var num = 0
 function addFields(){
@@ -84,7 +70,6 @@ function addFields(){
     while (container.hasChildNodes()) {
         container.removeChild(container.lastChild);
     }
-    // j represent the number of try
     for (j=0; j<6; j++){
         for (i=0;i<number;i++){
             var k = i+1
@@ -119,9 +104,6 @@ function autoTab(i,j, number) {
     k = i
     q = j
     remplissage = document.getElementById("case"+k+q).value
-    //si input remplit on ecrit dans la case d'apres
-    //si on supprime la valeur on focus sur la case d'avant
-    //pas oublier de verifier le cas de fin de ligne
     if(remplissage == ""){
         if(i == 0){
             k = 0
@@ -131,10 +113,7 @@ function autoTab(i,j, number) {
         document.getElementById("case"+k+q).focus();
     }
     else{
-        if(i == number-1){
-            //k = 0
-            //q += 1
-        }
+        if(i == number-1){}
         else k+=1
         document.getElementById("case"+k+q).focus();
     }
