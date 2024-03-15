@@ -147,11 +147,7 @@ const data = {
 };
 /*
 const options = {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json' // Indique que le corps de la requête est en JSON
-    },
-    body: JSON.stringify(data) // Convertit les données en JSON
+    method: 'GET',
 };
 */
 
@@ -182,3 +178,19 @@ function setScore(){
       });
     }
 
+function setScore() {
+    fetch(url, options)
+        .then(response => {
+            if (response.ok) {
+                console.log('Score mis à jour');
+            } else {
+                console.error('Erreur lors du ping:', response.status);
+            }
+        })
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Erreur lors du ping:', error);
+        });
+}

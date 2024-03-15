@@ -1,19 +1,19 @@
 const url = 'http://localhost:4000/getscore';
 const options = {
-    method: 'GET', // Méthode de la requête
+    method: 'GET',
 };
 
 function getScore(){
     fetch(url, options)
     .then(response => {
         if (response.ok) {
-            console.log('Score mis à jour');
+            return response.json();
         } else {
           console.error('Erreur lors du ping:', response.status);
         }
     })
     .then(data => {
-        console.log(data);
+        console.log('Score:', data.score);
     })
     .catch(error => {
         console.error('Erreur lors du ping:', error);
