@@ -20,7 +20,7 @@ app.get('/setscore', (req, res) => {
 });
 
 app.get('/getscore', (req, res) => {
-  score2 = req.body.score;
+  score = req.body.score;
   res.json({ score: score });
 });
 

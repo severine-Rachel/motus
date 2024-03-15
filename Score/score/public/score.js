@@ -1,6 +1,6 @@
 const url = 'http://localhost:4000/getscore';
 const options = {
-    method: 'GET', // Méthode de la requête
+    method: 'GET',
 };
 
 function getScore(){
