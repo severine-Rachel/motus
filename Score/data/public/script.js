@@ -1,13 +1,13 @@
 // Find from API /word the word to find
 window.onload = function findNumber(){
     fetch('/word')
-        .then(response => response.text())
-        .then(data => {
-            num = data.slice(0, -1).length;
-            word = data.slice(0, -1);
-            tabword = word.split("");
-            tabchange = word.split("");
-        })
+    .then(response => response.text())
+    .then(data => {
+        num = data.slice(0, -1).length;
+        word = data.slice(0, -1);
+        tabword = word.split("");
+        tabchange = word.split("");
+    })
 }
 
 // Listen to the user input
@@ -19,11 +19,9 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     // While number of try is less than 5 we continue
     if (numTry != 5){
-        incrNum = numTry + 1
-    }
+        incrNum = numTry + 1}
     // Else call the function addElement to add a div with the result of the game
     else{addElement("L")}
-
     // For each letter of the word we compare the user input with the letter of tabword
     var letterUser = ""
     for (i = 0; i<num; i++){
@@ -37,7 +35,6 @@ form.addEventListener('submit', (event) => {
             success += 1;
             var input = document.getElementById("case" + i + incrNum);
             input.placeholder = trueLetter;
-            
         }
         // if the letter is not the same, we find if the letter still exist in tab change
         else{
@@ -63,7 +60,6 @@ form.addEventListener('submit', (event) => {
     numTry += 1
     console.log("fin de form" + numTry)
 });
-
 // at the end of the game, add a div with the result
 function addElement(a) {
     var newDiv = document.createElement("div");
@@ -74,7 +70,6 @@ function addElement(a) {
     else{
         var newContent = document.createTextNode("You loose ! Le mot était : " + word);
     }
-    
     newDiv.appendChild(newContent);
     var currentDiv = document.getElementById("bravo");
     document.body.insertBefore(newDiv, currentDiv);
@@ -105,9 +100,6 @@ function addFields(){
                     autoTab(i, j, number);
                 };
             })(i, j);
-            //input.onclick="autoTab('case'"+ i, j + ", '1', 'case'"+k, j+")"
-
-            // show the first letter of the word
             if (input.id == "case00"){
                 input.placeholder = tabword[0]
             }
@@ -153,25 +145,30 @@ function autoTab(i,j, number) {
     else{
         console.log("remplit")
     }
-    /*if(i == number -1 && j == 5){
-    }
-    else if(i == number-1){
-        k = 0
-        q += 1
-    }
-    else{
-        k += 1
-    }
-    document.getElementById("case"+k+q).focus();*/
 }
-const url = 'http://localhost:4000/setscore';
+var score = 3
+const url = `http://localhost:4000/setscore?score=${score}`;
+/*
+const data = {
+    score: 3
+};
+
 const options = {
-    method: 'GET', // Méthode de la requête
-  };
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json' // Indique que le corps de la requête est en JSON
+    },
+    body: JSON.stringify(data) // Convertit les données en JSON
+};
+*/
+
+    // Options de la requête
+    const options = {
+        method: 'GET'
+    };
 
 function setScore(){
-    fetch(url, options)
-    
+    fetch(url, options)  
     .then(response => {
         if (response.ok) {
             console.log('Score mis à jour');
@@ -187,3 +184,4 @@ function setScore(){
       });
       
     }
+
