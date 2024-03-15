@@ -140,8 +140,8 @@ function autoTab(i,j, number) {
     }
     else{
         if(i == number-1){
-            k = 0
-            q += 1
+            //k = 0
+            //q += 1
         }
         else k+=1
         document.getElementById("case"+k+q).focus();
@@ -166,18 +166,24 @@ function autoTab(i,j, number) {
 }
 const url = 'http://localhost:4000/setscore';
 const options = {
-    method: 'POST', // Méthode de la requête
+    method: 'GET', // Méthode de la requête
   };
 
 function setScore(){
     fetch(url, options)
+    
     .then(response => {
         if (response.ok) {
+            console.log('Score mis à jour');
         } else {
           console.error('Erreur lors du ping:', response.status);
         }
       })
+      .then(data => {
+        console.log(data);
+    })
       .catch(error => {
         console.error('Erreur lors du ping:', error);
       });
+      
     }

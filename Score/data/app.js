@@ -32,7 +32,6 @@ app.get('/word', (req, res) => {
   res.send(word);
 });
 
-
 const port = 3000;
 app.listen(port, () => {
 });
