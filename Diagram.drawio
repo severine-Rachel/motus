@@ -1,0 +1,98 @@
+<mxfile host="app.diagrams.net" modified="2024-03-15T18:30:10.865Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="sewf3jNbiYaQBB05M9jg" version="24.0.0" type="device">
+  <diagram id="3cSCF1uUVdt48iSn9I55" name="Page-1">
+    <mxGraphModel dx="1900" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="g8C-DD43J0x92x9kMrlg-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=diamond;endFill=1;" edge="1" parent="1" source="g8C-DD43J0x92x9kMrlg-1" target="g8C-DD43J0x92x9kMrlg-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-36" value="monitored by" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="g8C-DD43J0x92x9kMrlg-35">
+          <mxGeometry x="-0.2229" y="2" relative="1" as="geometry">
+            <mxPoint x="17" y="2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-1" value="Motus Game" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="480" width="230" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-2" value="The main service of the project,&amp;nbsp;&lt;div&gt;where you can play Motus.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-1">
+          <mxGeometry x="20" y="40" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-5" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-1">
+          <mxGeometry y="90" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-4" value="/word" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-1">
+          <mxGeometry x="90" y="90" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-7" value="Haproxy" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="490" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-8" value="Listens for requests to the Game&amp;nbsp;&lt;div&gt;and creates another instance for it.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-7">
+          <mxGeometry x="5" y="40" width="210" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-11" value="Score" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-40" y="465" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-12" value="Registers the user&#39;s score and&amp;nbsp;&lt;div&gt;displays them when visited.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-11">
+          <mxGeometry x="5" y="40" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-11">
+          <mxGeometry y="100" width="200" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-13" value="/score&lt;div&gt;/setscore&lt;/div&gt;&lt;div&gt;/getscore&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-11">
+          <mxGeometry x="65" y="95" width="70" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-17" value="Authentification" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="270" width="350" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-18" value="Provides a login page that allows a user to connect&amp;nbsp;&lt;div&gt;using a name and a password, or to register if not yet done.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-17">
+          <mxGeometry x="10" y="40" width="340" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-20" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-17">
+          <mxGeometry y="90" width="350" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-19" value="/login&lt;div&gt;/session&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-17">
+          <mxGeometry x="135" y="90" width="70" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-21" value="OpenID" style="swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="80" width="290" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-22" value="Validates client ID, scope value and redirect URL.&amp;nbsp;&lt;div&gt;If all is corrects, sends the user to the login page.&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-21">
+          <mxGeometry x="5" y="40" width="290" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-24" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-21">
+          <mxGeometry y="90" width="290" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-23" value="/authorize" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="g8C-DD43J0x92x9kMrlg-21">
+          <mxGeometry x="105" y="90" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="g8C-DD43J0x92x9kMrlg-23" target="g8C-DD43J0x92x9kMrlg-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-27" value="redirects to" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="g8C-DD43J0x92x9kMrlg-26">
+          <mxGeometry x="-0.1714" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="g8C-DD43J0x92x9kMrlg-20" target="g8C-DD43J0x92x9kMrlg-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-29" value="redirects to" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="g8C-DD43J0x92x9kMrlg-28">
+          <mxGeometry x="-0.05" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="g8C-DD43J0x92x9kMrlg-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="540" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g8C-DD43J0x92x9kMrlg-32" value="provides score" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="g8C-DD43J0x92x9kMrlg-31">
+          <mxGeometry x="0.3378" relative="1" as="geometry">
+            <mxPoint x="31" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
