@@ -33,3 +33,9 @@ Here is what the windows look like if the server is load on port 4000 :
 ## Score
 
 IN this section, the game is on data (port 3002) and the score section is on score (4000)
+
+![](README-Image/mermaidscore.png)
+
+## Authentification
+
+In this section 
