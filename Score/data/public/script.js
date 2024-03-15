@@ -138,21 +138,14 @@ function autoTab(i,j, number) {
         else k+=1
         document.getElementById("case"+k+q).focus();
     }
-
-    if(document.getElementById("case"+k+q).value == ""){
-        console.log("vide")
-    }
-    else{
-        console.log("remplit")
-    }
 }
 var score = 3
 const url = `http://localhost:4000/setscore?score=${score}`;
-/*
+//const url = `http://localhost:4000/setscore`;
 const data = {
     score: 3
 };
-
+/*
 const options = {
     method: 'POST',
     headers: {
@@ -168,6 +161,7 @@ const options = {
     };
 
 function setScore(){
+    console.log("ENVOI DE SCORE!!!!")
     fetch(url, options)  
     .then(response => {
         if (response.ok) {
@@ -177,11 +171,14 @@ function setScore(){
         }
       })
       .then(data => {
+        //data = JSON.parse(data);
+        //afficher le type de data
+        console.log(typeof(data));
         console.log(data);
+        console.log("score mis à jour2")
     })
       .catch(error => {
         console.error('Erreur lors du ping:', error);
       });
-      
     }
 
