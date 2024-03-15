@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="shortcut icon" href="#">
+<link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motus</title>
+</head>
+<body>
+    <p> <%= username %> </p>
+    <p><a href="/logout">Logout</a></p>
+    <h1>Motus</h1>
+    <form action="/word" method="get" id="motForm">
+        <a href="#" id="generate" onclick="addFields(); this.style.display = 'none';">Générer mot du jour</a>
+        <div id="container"></div>  
+        <br>
+        
+    </form> 
+    <div id="yourword"></div>
+    <!--<input type="text" id="charger" name="charger" value="">Number of members: (max. 10)<br />-->
+    <div id="bravo"></div>
+</body>
+</html>
+<script src="script.js"></script>
